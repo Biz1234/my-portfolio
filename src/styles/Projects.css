@@ -1,0 +1,198 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent: #007bff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --primary-bg: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #66b0ff;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-first approach */
+.projects {
+  padding: 2rem 1rem;
+  background-color: var(--primary-bg);
+  box-sizing: border-box;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.project-screenshot {
+  width: 100%;
+  height: clamp(140px, 40vw, 180px);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+.project-details {
+  padding: 1rem;
+}
+
+.project-details h3 {
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.project-details p {
+  font-size: clamp(0.85rem, 3vw, 0.9rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.live-btn,
+.github-btn {
+  padding: 0.6rem 1.5rem;
+  font-size: clamp(0.85rem, 3vw, 0.9rem);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+.live-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.live-btn:hover,
+.live-btn:focus {
+  background-color: #0056b3; /* Darker accent */
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.github-btn {
+  background-color: var(--text-secondary);
+  color: var(--card-bg);
+}
+
+.github-btn:hover,
+.github-btn:focus {
+  background-color: #4a5568;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Tablet and Desktop */
+@media (min-width: 769px) {
+  .projects {
+    padding: 3rem 2rem;
+  }
+
+  .projects h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-screenshot {
+    height: clamp(180px, 20vw, 220px);
+  }
+
+  .project-details {
+    padding: 1.5rem;
+  }
+
+  .project-details h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+  }
+
+  .project-details p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  .live-btn,
+  .github-btn {
+    padding: 0.7rem 1.75rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    min-width: 120px;
+  }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+  .projects {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .projects h2 {
+    font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+  }
+
+  .project-grid {
+    gap: 1.2rem;
+  }
+
+  .project-screenshot {
+    height: clamp(120px, 35vw, 160px);
+  }
+
+  .project-details {
+    padding: 0.75rem;
+  }
+
+  .project-details h3 {
+    font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+  }
+
+  .project-details p {
+    font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+  }
+
+  .live-btn,
+  .github-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+    min-width: 90px;
+  }
+}

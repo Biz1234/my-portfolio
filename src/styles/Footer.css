@@ -1,0 +1,116 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent: #007bff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --primary-bg: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #66b0ff;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-first approach */
+.footer {
+  padding: 1.5rem 1rem;
+  background-color: var(--primary-bg);
+  border-top: 1px solid rgba(0, 123, 255, 0.2); /* Subtle blue accent */
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: min(100%, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: clamp(0.85rem, 3vw, 0.9rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.social-links {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+  padding: 0;
+}
+
+.social-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-icon {
+  font-size: clamp(1.2rem, 4vw, 1.3rem);
+  transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-links a:hover .social-icon,
+.social-links a:focus .social-icon,
+.social-icon:focus {
+  color: #0056b3; /* Darker accent */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+/* Tablet and Desktop */
+@media (min-width: 769px) {
+  .footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-icon {
+    font-size: clamp(1.4rem, 3vw, 1.5rem);
+  }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0.75rem;
+  }
+
+  .footer-container {
+    gap: 0.8rem;
+  }
+
+  .footer p {
+    font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+  }
+}
