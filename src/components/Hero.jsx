@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Typed from 'typed.js';
-import profilePhoto from '../assets/Snapchat-1398073095.jpg';
+import profilePhoto from '../assets/snapchat-1398073095.jpg';
 import '../styles/Hero.css';
 
 function Hero() {

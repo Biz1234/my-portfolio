@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import '../styles/Projects.css';
-import Screenshot1 from '../assets/screenshot1.png';
-import Screenshot2 from '../assets/screenshot2.png';
-import Screenshot3 from '../assets/screenshot3.png';
+import screenshot1 from '../assets/screenshot1.png';
+import screenshot2 from '../assets/screenshot2.png';
+import screenshot3 from '../assets/screenshot3.png';
 // Project data
 const projects = [
   {
     id: 1,
     title: 'Job Finder',
     description: 'A fully functional job search platform built with React, Tailwind CSS, and Node.js, featuring user authentication and real-time job listings.',
-    screenshot: Screenshot1,
+    screenshot: screenshot1,
     liveLink: 'https://job-finder-demo.example.com',
     githubLink: 'https://github.com/biz1234/job-finder',
   },
@@ -17,7 +17,7 @@ const projects = [
     id: 2,
     title: 'Social Media',
     description: 'A dynamic social media platform developed with React, Vite, and Node.js, supporting user profiles, posts, likes, and real-time notifications.',
-    screenshot: Screenshot3,
+    screenshot: screenshot3,
     liveLink: 'https://social-media-demo.example.com',
     githubLink: 'https://github.com/biz1234/social-media',
   },
@@ -25,7 +25,7 @@ const projects = [
     id: 3,
     title: 'Bizualem Car Rental',
     description: 'A car rental platform built with React.js and Node.js, featuring real-time vehicle availability, booking management, and payment integration.',
-    screenshot: Screenshot2,
+    screenshot: screenshot2,
     liveLink: 'https://car-rental-demo.example.com',
     githubLink: 'https://github.com/biz1234/car-rental',
   },
