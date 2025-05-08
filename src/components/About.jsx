@@ -35,8 +35,8 @@ function About() {
             </p>
           </div>
           <motion.a
-            href="./bizualem-cv.pdf" 
-            download="Bizualem-cv.pdf"
+            href="./bizualemcv.docx" 
+            download="Bizualem-cv.docx"
             className="resume-btn"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
