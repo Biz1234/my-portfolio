@@ -44,7 +44,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
         >
-          <h1 id="hero-title">Hi, I’m Bizualem Abebe</h1>
+          <h1 id="hero-title">Hi, I’m Buzualem Abebe</h1>
           <p className="typed-text">
             <span ref={typedRef} aria-live="polite"></span>
           </p>

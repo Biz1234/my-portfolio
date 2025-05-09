@@ -52,7 +52,7 @@ function Navbar({ theme, toggleTheme }) {
 
   return (
     <nav className={`navbar ${theme}`} aria-label="Main navigation">
-      <h2 className="navbar-logo">Bizualem Abebe</h2>
+      <h2 className="navbar-logo">Buzualem Abebe</h2>
       <div className="nav-right">
         <ul className="nav-links desktop-links">
           {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
