@@ -57,7 +57,7 @@ function About() {
             <ul role="list">
               <li role="listitem">Fullstack Developer</li>
               <li role="listitem">Based in [Adama, Ethiopia]</li> {/* Replace with your location */}
-              <li role="listitem">Experience: [2] Years</li> {/* Replace with your experience */}
+              <li role="listitem">Experience: [morethan 2] Years</li> {/* Replace with your experience */}
               <li role="listitem">Projects: [morethan 10]</li> {/* Replace with your project count */}
             </ul>
           </div>
