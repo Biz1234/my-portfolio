@@ -19,7 +19,7 @@ const projects = [
     description: 'A dynamic social media platform developed with React, Vite, and Node.js, supporting user profiles, posts, likes, and real-time notifications.',
     screenshot: screenshot3,
     liveLink: 'https://social-media-demo.example.com',
-    githubLink: 'hhttps://github.com/Biz1234/social_media',
+    githubLink: 'https://github.com/Biz1234/social_media',
   },
   {
     id: 3,
