@@ -11,7 +11,7 @@ const projects = [
     description: 'A fully functional job search platform built with React, Tailwind CSS, and Node.js, featuring user authentication and real-time job listings.',
     screenshot: screenshot1,
     liveLink: 'https://job-finder-demo.example.com',
-    githubLink: 'https://github.com/biz1234/job-finder',
+    githubLink: 'https://github.com/Biz1234/job-search-platform',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const projects = [
     description: 'A car rental platform built with React.js and Node.js, featuring real-time vehicle availability, booking management, and payment integration.',
     screenshot: screenshot2,
     liveLink: 'https://car-rental-demo.example.com',
-    githubLink: 'https://github.com/biz1234/car-rental',
+    githubLink: 'https://github.com/Biz1234/car-rental',
   },
 ];
 
