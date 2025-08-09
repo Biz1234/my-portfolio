@@ -1,5 +1,5 @@
 :root {
-  --primary-bg: #f5f7fa;
+  --primary-bg: linear-gradient(135deg, #f5f7fa, #e4ebf5);
   --text-primary: #333333;
   --text-secondary: #666666;
   --accent: #007bff;
@@ -7,23 +7,29 @@
 }
 
 .dark {
-  --primary-bg: #1a1a1a;
+  --primary-bg: linear-gradient(135deg, #1a1a1a, #121212);
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --accent: #66b0ff;
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile-first approach */
+/* Hero base */
 .hero {
   width: 100%;
-  min-height: calc(100vh - 60px); /* Account for navbar */
+  min-height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--primary-bg);
   padding: 1.5rem 1rem;
   box-sizing: border-box;
+  animation: fadeInBg 1s ease-in-out;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .hero-content {
@@ -33,7 +39,7 @@
   text-align: center;
   max-width: 1200px;
   width: 100%;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .hero-text {
@@ -50,10 +56,11 @@
 
 .typed-text {
   font-size: clamp(1.1rem, 4vw, 1.3rem);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--accent);
   min-height: 2rem;
   margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
 .bio {
@@ -65,32 +72,37 @@
   max-width: 90%;
 }
 
+/* CTA Button */
 .cta-button {
   padding: 0.8rem 2rem;
   font-size: clamp(0.9rem, 3vw, 1rem);
   font-weight: 600;
-  background-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #0056b3);
   color: #ffffff;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  min-width: 120px;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
 }
 
 .cta-button:hover {
-  background-color: #0056b3; /* Darker shade of accent */
-  box-shadow: 0 4px 12px var(--shadow);
+  background: linear-gradient(135deg, #0056b3, var(--accent));
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .cta-button:focus {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
+/* Profile photo wrapper for animated border */
 .hero-image {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .profile-photo {
@@ -98,12 +110,17 @@
   height: clamp(160px, 45vw, 200px);
   border-radius: 50%;
   object-fit: cover;
+  padding: 4px;
+  background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
+  background-size: 200% 200%;
+  animation: borderAnimation 4s linear infinite;
   box-shadow: 0 4px 12px var(--shadow);
-  transition: box-shadow 0.2s ease;
 }
 
-.profile-photo:hover {
-  box-shadow: 0 6px 16px var(--shadow);
+@keyframes borderAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Tablet and Desktop */
@@ -149,7 +166,7 @@
   }
 }
 
-/* Smaller mobile screens */
+/* Smaller mobile */
 @media (max-width: 480px) {
   .hero {
     padding: 1rem 0.75rem;

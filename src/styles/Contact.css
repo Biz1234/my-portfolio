@@ -5,6 +5,8 @@
   --text-secondary: #666666;
   --accent: #007bff;
   --shadow: rgba(0, 0, 0, 0.1);
+  --error: #e74c3c;
+  --success: #2ecc71;
 }
 
 .dark {
@@ -16,57 +18,58 @@
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile-first approach */
+/* Contact Section */
 .contact {
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   background-color: var(--primary-bg);
   box-sizing: border-box;
 }
 
 .contact h2 {
   text-align: center;
-  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Form Container */
 .contact-form-container {
-  max-width: min(100%, 500px);
+  max-width: 600px;
   margin: 0 auto;
-  padding: 1.5rem;
   background-color: var(--card-bg);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px var(--shadow);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
+/* Form Elements */
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 1.2rem;
-}
-
 .form-group label {
-  display: block;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 0.7rem;
-  font-size: clamp(0.85rem, 3vw, 0.9rem);
-  font-weight: 400;
-  color: var(--text-primary);
-  background-color: var(--card-bg);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
   border: 1px solid var(--text-secondary);
   border-radius: 8px;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -74,50 +77,48 @@
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
-.form-group textarea {
+/* Textarea specific */
+textarea {
+  min-height: 120px;
   resize: vertical;
-  min-height: 100px;
-  max-height: 300px;
 }
 
+/* Submit Button */
 .submit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   background-color: var(--accent);
-  color: #ffffff;
-  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: #fff;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 25px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  min-width: 120px;
 }
 
 .submit-btn:hover:not(:disabled),
-.submit-btn:focus:not(:disabled) {
+.submit-btn:focus {
   background-color: #0056b3;
   box-shadow: 0 4px 12px var(--shadow);
 }
 
 .submit-btn:disabled {
-  background-color: #cccccc;
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
+/* Loading Spinner */
 .loading-spinner {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid #ffffff;
-  border-top: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top: 2px solid #fff;
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
 }
 
 @keyframes spin {
@@ -126,94 +127,30 @@
   }
 }
 
+/* Form Status Message */
 .form-status {
   margin-top: 1rem;
-  font-size: clamp(0.85rem, 3vw, 0.9rem);
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--accent);
   text-align: center;
+  color: var(--text-secondary);
 }
 
-/* Tablet and Desktop */
-@media (min-width: 769px) {
-  .contact {
-    padding: 3rem 2rem;
-  }
-
-  .contact h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 2rem;
-  }
-
-  .contact-form-container {
-    padding: 2rem;
-    max-width: 600px;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group label {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.8rem;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-  }
-
-  .submit-btn {
-    padding: 0.8rem 2rem;
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    min-width: 140px;
-  }
-
-  .form-status {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-  }
+.form-status:contains('successfully') {
+  color: var(--success);
 }
 
-/* Smaller mobile screens */
+.form-status:contains('Please') {
+  color: var(--error);
+}
+
+/* Responsive */
 @media (max-width: 480px) {
-  .contact {
-    padding: 1.5rem 0.75rem;
-  }
-
-  .contact h2 {
-    font-size: clamp(1.5rem, 4.5vw, 1.8rem);
-  }
-
   .contact-form-container {
-    padding: 1rem;
-  }
-
-  .form-group {
-    margin-bottom: 1rem;
-  }
-
-  .form-group label {
-    font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.6rem;
-    font-size: clamp(0.8rem, 2.5vw, 0.85rem);
-  }
-
-  .form-group textarea {
-    min-height: 80px;
+    padding: 1.5rem;
   }
 
   .submit-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-    min-width: 100px;
-  }
-
-  .form-status {
-    font-size: clamp(0.8rem, 2.5vw, 0.85rem);
+    width: 100%;
   }
 }
