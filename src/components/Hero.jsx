@@ -11,9 +11,14 @@ function Hero() {
     if (typedRef.current) {
       const options = {
         strings: ['Fullstack Developer', 'Problem Solver', 'Web Enthusiast'],
-        typeSpeed: 50,
-        backSpeed: 30,
+        typeSpeed: 45,
+        backSpeed: 25,
+        backDelay: 1500,
         loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        smartBackspace: true,
+        ariaLabel: 'My professional roles'
       };
       const typed = new Typed(typedRef.current, options);
       return () => typed.destroy();
@@ -24,7 +29,10 @@ function Hero() {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   };
 
@@ -44,13 +52,12 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
         >
-          <h1 id="hero-title">Hi, I’m Buzualem Abebe</h1>
+          <h1 id="hero-title">Hi, I'm <span className="name-highlight">Buzualem Abebe</span></h1>
           <p className="typed-text">
             <span ref={typedRef} aria-live="polite"></span>
           </p>
           <p className="bio">
-            I specialize in building modern, scalable web applications with expertise in React, Node.js, and more. 
-            Passionate about crafting user-friendly solutions that make an impact.
+            I love building modern, scalable web apps using React, Node.js, and more. My goal is to create intuitive and impactful solutions that people enjoy using.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -71,9 +78,11 @@ function Hero() {
         >
           <img
             src={profilePhoto}
-            alt="Bizualem Abebe, a fullstack developer"
+            alt="Buzualem Abebe, a fullstack developer"
             className="profile-photo"
-            loading="lazy"
+            loading="eager"
+            width="280"
+            height="280"
           />
         </motion.div>
       </div>
