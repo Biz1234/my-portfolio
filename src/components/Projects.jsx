@@ -27,7 +27,7 @@ const projects = [
     description: 'A movie search web application is developed with React and Vite. It fetches data from a movie API to provide details like titles, posters, release dates, and ratings.',
     screenshot: screenshot3,
     liveLink: 'https://bozamovie.netlify.app/',
-    githubLink: 'https://github.com/Biz1234/social_media/tree/branch',
+    githubLink: 'https://github.com/Biz1234/react-movie/tree/main/frontend',
     technologies: ['React', 'Vite', 'API Integration'],
     featured: false
   },
@@ -47,7 +47,7 @@ const projects = [
     description: 'This Smart City web application is built with the MERN stack. It enables citizens to report issues, request city services, and stay updated on community improvements.',
     screenshot: screenshot4,
     liveLink: 'https://smartcity-1-lkue.onrender.com/',
-    githubLink: 'https://github.com/Biz1234/city-explorer',
+    githubLink: 'https://github.com/Biz1234/smartcity',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js'],
     featured: true
   },
@@ -151,11 +151,11 @@ function Projects() {
                 <div className="project-overlay">
                   <div className="project-actions">
                     <button className="project-action-btn" aria-label="View project details">
-                      View Project
+                      View 
                     </button>
                   </div>
                 </div>
-                {project.featured && <div className="featured-badge">Featured</div>}
+                {project.featured}
               </div>
               
               <div className="project-details">
