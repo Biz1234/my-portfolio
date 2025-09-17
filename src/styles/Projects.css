@@ -8,7 +8,7 @@
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-hover: rgba(0, 0, 0, 0.15);
   --overlay: rgba(0, 0, 0, 0.7);
-  --featured-accent: #ff6b6b;
+  /* --featured-accent: #ff6b6b; */
 }
 
 .dark {
@@ -21,7 +21,7 @@
   --shadow: rgba(0, 0, 0, 0.3);
   --shadow-hover: rgba(0, 0, 0, 0.4);
   --overlay: rgba(0, 0, 0, 0.85);
-  --featured-accent: #ff8585;
+  /* --featured-accent: #ff8585; */
 }
 
 /* Projects Section */
