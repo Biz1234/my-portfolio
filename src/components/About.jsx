@@ -35,8 +35,8 @@ function About() {
             </p>
           </div>
           <motion.a
-            href="./bizualemcv.docx" 
-            download="Bizualem-cv.docx"
+            href="./Buzualem_Abebe.pdf" 
+            download="Buzualem_Abebe.pdf"
             className="resume-btn"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -56,9 +56,9 @@ function About() {
             <h3>At a Glance</h3>
             <ul role="list">
               <li role="listitem">Fullstack Developer</li>
-              <li role="listitem">Based in [Adama, Ethiopia]</li> {/* Replace with your location */}
-              <li role="listitem">Experience: [morethan 2] Years</li> {/* Replace with your experience */}
-              <li role="listitem">Projects: [morethan 10]</li> {/* Replace with your project count */}
+              <li role="listitem">Based in [Adama, Ethiopia]</li> 
+              <li role="listitem">Experience: [morethan 2] Years</li> 
+              <li role="listitem">Projects: [morethan 10]</li> 
             </ul>
           </div>
         </motion.div>
