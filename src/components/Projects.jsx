@@ -5,7 +5,7 @@ import screenshot1 from '../assets/fitness.png';
 import screenshot2 from '../assets/screenshot2.png';
 import screenshot3 from '../assets/movie.png';
 import screenshot4 from '../assets/city.png';
-
+import screenshot5 from '../assets/store.png';
 // Icons for enhanced UI
 import { FiExternalLink, FiGithub, FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 
@@ -51,6 +51,18 @@ const projects = [
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js'],
     featured: true
   },
+
+ {
+    id: 5,
+    title: 'E-Store',
+    description: 'This E-Store Shopping platform is developed using MongoDB, Express.js, React, and Node.js. Users can browse products, filter by categories, add items to the cart, and make purchases. Admins can manage products, view orders, and track sales. The app features a responsive UI, secure authentication, and smooth user experience.',
+    screenshot: screenshot5,
+    liveLink: 'https://e-commerce-1-p0ho.onrender.com/',
+    githubLink: 'https://github.com/Biz1234/CodeAlpha_E-commerce',
+    technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js','tailwindcss'],
+    featured: true
+  },
+  
 ];
 
 function Projects() {
