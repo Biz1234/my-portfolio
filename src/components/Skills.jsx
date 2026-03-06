@@ -1,6 +1,17 @@
 import { motion } from 'framer-motion';
-import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaGitAlt, FaGithub, FaServer } from 'react-icons/fa';
-import { SiTailwindcss, SiExpress, SiSpringboot, SiSqlite, SiVeed } from 'react-icons/si';
+import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaJava, FaGitAlt, FaGithub, FaServer, FaDatabase } from 'react-icons/fa';
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiSpringboot,
+  SiTypescript,
+  SiNextdotjs,
+  SiMongodb,
+  SiPostgresql,
+  SiSupabase,
+  SiFirebase,
+  SiDocker,
+} from 'react-icons/si';
 import '../styles/Skills.css';
 
 function Skills() {
@@ -9,6 +20,8 @@ function Skills() {
       title: 'Front-End',
       skills: [
         { name: 'React.js', icon: <FaReact /> },
+        { name: 'TypeScript', icon: <SiTypescript /> },
+        { name: 'Next.js', icon: <SiNextdotjs /> },
         { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
         { name: 'JavaScript', icon: <FaJs /> },
         { name: 'HTML', icon: <FaHtml5 /> },
@@ -19,10 +32,12 @@ function Skills() {
       title: 'Back-End',
       skills: [
         { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
         { name: 'Express', icon: <SiExpress /> },
         { name: 'Java', icon: <FaJava /> },
         { name: 'Spring Boot', icon: <SiSpringboot /> },
-        { name: 'SQL', icon: <SiSqlite /> },
+        { name: 'SQL', icon: <FaDatabase /> },
+        { name: 'PostgreSQL', icon: <SiPostgresql /> },
       ],
     },
     {
@@ -30,7 +45,10 @@ function Skills() {
       skills: [
         { name: 'Git', icon: <FaGitAlt /> },
         { name: 'GitHub', icon: <FaGithub /> },
-       { name: 'Deployment', icon: <FaServer /> },
+        { name: 'Supabase', icon: <SiSupabase /> },
+        { name: 'Firebase', icon: <SiFirebase /> },
+        { name: 'Docker', icon: <SiDocker /> },
+        { name: 'Deployment', icon: <FaServer /> },
       ],
     },
   ];
