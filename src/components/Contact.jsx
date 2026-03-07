@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import '../styles/Contact.css';
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -17,7 +22,7 @@ function Contact() {
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -33,13 +38,37 @@ function Contact() {
       return;
     }
 
-    // Simulate form submission (replace with actual backend integration, e.g., Formspree or Netlify Forms)
-    setTimeout(() => {
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setStatus('Email service is not configured. Please try again later.');
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        }
+      );
+
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
       setIsLoading(false);
       setTimeout(() => setStatus(''), 5000);
-    }, 1000); // Simulated delay
+    } catch {
+      setStatus('Message failed to send. Please try again.');
+      setIsLoading(false);
+    }
   };
 
   return (

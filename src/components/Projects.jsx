@@ -68,7 +68,7 @@ const projects = [
     title: 'Learner Portal',
     description: 'Role-based learner Portal web platform developed at internship time lines.Insructor create group, add learners,share file ,announcemnt,assignment,also start discussion post.Adminstrator manage group,announcemnt,files,users and all other role of instructor.The app features a responsive UI, secure authentication, and smooth user experience.',
     screenshot: screenshot6,
-    liveLink: 'https://Learner-Portal.netlify.app/',
+    liveLink: 'https://Learner.netlify.app/',
     githubLink: 'https://github.com/Ethronics/student-portal',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js', 'shadcn', 'tailwindcss'],
     featured: true
