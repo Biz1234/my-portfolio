@@ -89,9 +89,9 @@ const projects = [
 {
   id: 7,
     title: 'job Tracker',
-    description: 'Role-based learner Portal web platform developed at internship time lines.Insructor create group, add learners,share file ,announcemnt,assignment,also start discussion post.Adminstrator manage group,announcemnt,files,users and all other role of instructor.The app features a responsive UI, secure authentication, and smooth user experience.',
+    description: 'A comprehensive job application tracking platform built with Next.js and TypeScript. Features include application status tracking, interview scheduling, resume management, and analytics dashboard.',
     screenshot: [screenshot7, screenshot8, screenshot9],
-    liveLink: 'https://job.app/',
+    liveLink: 'https://bozajob.app/',
     githubLink: 'https://github.com/Biz1234/next-job-tracker',
     technologies: ['Next.js', 'MongoDB', 'Typescript', 'tailwindcss'],
     featured: true
