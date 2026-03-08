@@ -10,7 +10,7 @@ import screenshot6 from '../assets/Ethronics.png';
 import screenshot7 from '../assets/job1.png';
 import screenshot8 from '../assets/job2.png';
 import screenshot9 from '../assets/job3.png';
-
+import screenshot10 from '../assets/ethronics1.png';
 
 
 // Icons for enhanced UI
@@ -79,7 +79,7 @@ const projects = [
     id: 6,
     title: 'Learner Portal',
     description: 'Role-based learner Portal web platform developed at internship time lines.Insructor create group, add learners,share file ,announcemnt,assignment,also start discussion post.Adminstrator manage group,announcemnt,files,users and all other role of instructor.The app features a responsive UI, secure authentication, and smooth user experience.',
-    screenshot: [screenshot6],
+    screenshot: [screenshot6,screenshot10],
     liveLink: 'https://Learner.netlify.app/',
     githubLink: 'https://github.com/Ethronics/student-portal',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js', 'shadcn', 'tailwindcss'],
@@ -184,7 +184,7 @@ function Projects() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          A selection of my recent projects showcasing my skills in web development
+         recent projects showcasing my skills 
         </motion.p>
 
         <motion.div 
@@ -348,7 +348,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="live-btn"
                     >
-                      <FiExternalLink /> View Live Project
+                      <FiExternalLink />Live 
                     </a>
                     <a
                       href={projects[currentProject].githubLink}
@@ -356,7 +356,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="github-btn"
                     >
-                      <FiGithub /> View Source Code
+                      <FiGithub />Source Code
                     </a>
                   </div>
 
