@@ -7,8 +7,20 @@ import screenshot3 from '../assets/movie.png';
 import screenshot4 from '../assets/city.png';
 import screenshot5 from '../assets/store.png';
 import screenshot6 from '../assets/Ethronics.png';
+import screenshot7 from '../assets/job1.png';
+import screenshot8 from '../assets/job2.png';
+import screenshot9 from '../assets/job3.png';
+
+
+
 // Icons for enhanced UI
-import { FiExternalLink, FiGithub, FiChevronRight, FiChevronLeft } from 'react-icons/fi';
+import {
+  FiExternalLink,
+  FiGithub,
+  FiChevronRight,
+  FiChevronLeft,
+  FiImage
+} from 'react-icons/fi';
 
 // Project data with additional fields for enhanced UI
 const projects = [
@@ -16,7 +28,7 @@ const projects = [
     id: 1,
     title: 'Fitness Pro',
     description: 'A modern fitness web app built with React (Vite) and TailwindCSS, featuring workout tracking, progress monitoring, and a responsive design for all devices.',
-    screenshot: screenshot1,
+    screenshot: [screenshot1],
     liveLink: 'https://68ba9a261f1c8bda9752b83c--fitp.netlify.app/',
     githubLink: 'https://github.com/Biz1234/job-search-platform',
     technologies: ['React', 'Vite', 'TailwindCSS'],
@@ -26,7 +38,7 @@ const projects = [
     id: 2,
     title: 'Boza Movie',
     description: 'A movie search web application is developed with React and Vite. It fetches data from a movie API to provide details like titles, posters, release dates, and ratings.',
-    screenshot: screenshot3,
+    screenshot: [screenshot3],
     liveLink: 'https://bozamovie.netlify.app/',
     githubLink: 'https://github.com/Biz1234/react-movie/tree/main/frontend',
     technologies: ['React', 'Vite', 'API Integration'],
@@ -36,7 +48,7 @@ const projects = [
     id: 3,
     title: 'Bizualem Car Rental',
     description: 'This car rental landing page was built using React and Vite, featuring a sleek, responsive design optimized for both desktop and mobile users.',
-    screenshot: screenshot2,
+    screenshot: [screenshot2],
     liveLink: 'https://car-rental-72r1.onrender.com/',
     githubLink: 'https://github.com/Biz1234/car-rental',
     technologies: ['React', 'Vite', 'Responsive Design'],
@@ -46,7 +58,7 @@ const projects = [
     id: 4,
     title: 'Smart City',
     description: 'This Smart City web application is built with the MERN stack. It enables citizens to report issues, request city services, and stay updated on community improvements.',
-    screenshot: screenshot4,
+    screenshot: [screenshot4],
     liveLink: 'https://smartcity-1-lkue.onrender.com/',
     githubLink: 'https://github.com/Biz1234/smartcity',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js'],
@@ -57,23 +69,35 @@ const projects = [
     id: 5,
     title: 'E-Store',
     description: 'This E-Store Shopping platform is developed using MongoDB, Express.js, React, and Node.js. Users can browse products, filter by categories, add items to the cart, and make purchases. Admins can manage products, view orders, and track sales. The app features a responsive UI, secure authentication, and smooth user experience.',
-    screenshot: screenshot5,
+    screenshot: [screenshot5],
     liveLink: 'https://e-commerce-1-p0ho.onrender.com/',
     githubLink: 'https://github.com/Biz1234/CodeAlpha_E-commerce',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js','tailwindcss'],
     featured: true
   },
    {
-    id: 5,
+    id: 6,
     title: 'Learner Portal',
     description: 'Role-based learner Portal web platform developed at internship time lines.Insructor create group, add learners,share file ,announcemnt,assignment,also start discussion post.Adminstrator manage group,announcemnt,files,users and all other role of instructor.The app features a responsive UI, secure authentication, and smooth user experience.',
-    screenshot: screenshot6,
+    screenshot: [screenshot6],
     liveLink: 'https://Learner.netlify.app/',
     githubLink: 'https://github.com/Ethronics/student-portal',
     technologies: ['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js', 'shadcn', 'tailwindcss'],
     featured: true
   },
   
+{
+  id: 7,
+    title: 'job Tracker',
+    description: 'Role-based learner Portal web platform developed at internship time lines.Insructor create group, add learners,share file ,announcemnt,assignment,also start discussion post.Adminstrator manage group,announcemnt,files,users and all other role of instructor.The app features a responsive UI, secure authentication, and smooth user experience.',
+    screenshot: [screenshot7, screenshot8, screenshot9],
+    liveLink: 'https://job.app/',
+    githubLink: 'https://github.com/Biz1234/next-job-tracker',
+    technologies: ['Next.js', 'MongoDB', 'Typescript', 'tailwindcss'],
+    featured: true
+  },
+
+
 ];
 
 
@@ -82,17 +106,13 @@ const projects = [
 
 
 function Projects() {
-  const [activeFilter, setActiveFilter] = useState('all');
   const [currentProject, setCurrentProject] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Filter projects if needed (for future use)
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.featured);
 
   const openProjectModal = (index) => {
     setCurrentProject(index);
+    setCurrentImage(0);
     setIsModalOpen(true);
   };
 
@@ -105,6 +125,19 @@ function Projects() {
       setCurrentProject((prev) => (prev + 1) % projects.length);
     } else {
       setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+    }
+
+    // Always start from first image when switching projects.
+    setCurrentImage(0);
+  };
+
+  const navigateImage = (direction) => {
+    const totalImages = projects[currentProject].screenshot.length;
+
+    if (direction === 'next') {
+      setCurrentImage((prev) => (prev + 1) % totalImages);
+    } else {
+      setCurrentImage((prev) => (prev - 1 + totalImages) % totalImages);
     }
   };
 
@@ -161,7 +194,7 @@ function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               className={`project-card ${project.featured ? 'featured' : ''}`}
@@ -171,11 +204,17 @@ function Projects() {
             >
               <div className="project-image-container">
                 <img
-                  src={project.screenshot}
+                  src={project.screenshot[0]}
                   alt={`Screenshot of ${project.title} project`}
                   className="project-screenshot"
                   loading="lazy"
                 />
+                {project.screenshot.length > 1 && (
+                  <div className="image-count-badge" aria-label={`${project.screenshot.length} images available`}>
+                    <FiImage />
+                    <span>{project.screenshot.length}</span>
+                  </div>
+                )}
                 <div className="project-overlay">
                   <div className="project-actions">
                     <button className="project-action-btn" aria-label="View project details">
@@ -262,8 +301,29 @@ function Projects() {
               
               <div className="modal-body">
                 <div className="modal-image">
+                  {projects[currentProject].screenshot.length > 1 && (
+                    <>
+                      <button
+                        className="modal-image-nav prev"
+                        onClick={() => navigateImage('prev')}
+                        aria-label="Previous image"
+                      >
+                        <FiChevronLeft />
+                      </button>
+                      <button
+                        className="modal-image-nav next"
+                        onClick={() => navigateImage('next')}
+                        aria-label="Next image"
+                      >
+                        <FiChevronRight />
+                      </button>
+                      <div className="modal-image-indicator">
+                        {currentImage + 1} / {projects[currentProject].screenshot.length}
+                      </div>
+                    </>
+                  )}
                   <img 
-                    src={projects[currentProject].screenshot} 
+                    src={projects[currentProject].screenshot[currentImage]}
                     alt={projects[currentProject].title} 
                   />
                 </div>
@@ -299,6 +359,21 @@ function Projects() {
                       <FiGithub /> View Source Code
                     </a>
                   </div>
+
+                  {projects[currentProject].screenshot.length > 1 && (
+                    <div className="modal-thumbnails" aria-label="Project image thumbnails">
+                      {projects[currentProject].screenshot.map((image, imageIndex) => (
+                        <button
+                          key={`${projects[currentProject].id}-${imageIndex}`}
+                          className={`thumbnail-btn ${currentImage === imageIndex ? 'active' : ''}`}
+                          onClick={() => setCurrentImage(imageIndex)}
+                          aria-label={`View image ${imageIndex + 1}`}
+                        >
+                          <img src={image} alt={`${projects[currentProject].title} ${imageIndex + 1}`} />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
