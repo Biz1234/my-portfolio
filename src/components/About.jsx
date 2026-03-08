@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaTelegramPlane } from 'react-icons/fa';
 import '../styles/About.css';
 
 
@@ -34,16 +34,29 @@ function About() {
               I love exploring new tools, solving problems, and creating impactful digital experiences.
             </p>
           </div>
-          <motion.a
-            href="./Buzualem_Abebe.pdf" 
-            download="Buzualem_Abebe.pdf"
-            className="resume-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label="Download Bizualem Abebe's resume"
-          >
-            <FaDownload /> Resume
-          </motion.a>
+          <div className="about-actions">
+            <motion.a
+              href="./Buzualem_Abebe.pdf"
+              download="Buzualem_Abebe.pdf"
+              className="resume-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Download Bizualem Abebe's resume"
+            >
+              <FaDownload /> Resume
+            </motion.a>
+            <motion.a
+              href="https://t.me/SBabyii"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hire-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Hire Bizualem Abebe on Telegram"
+            >
+              <FaTelegramPlane /> Hire Me
+            </motion.a>
+          </div>
         </motion.div>
         <motion.div
           className="about-highlight"
